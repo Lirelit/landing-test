@@ -1,0 +1,42 @@
+$breakpoints: ( // breakpoints
+    xl: 1440px,
+    lg: 1200px,
+    md: 920px,
+    sm: 425px,
+);
+// md: 768px,
+// sm: 375px,
+
+// media queries mixins
+@mixin breakpoint($screen-size) {
+    @if map-has-key($breakpoints, $screen-size) {
+        @media (max-width: map-get($breakpoints, $screen-size)) {
+            @content;
+        }
+    }
+
+    @else {
+        // Debugging
+        @error "#{$screen-size} has not been declared as a breakpoint."
+    }
+};
+
+:root{
+    --content-width: 1318px;
+    --mob-padding: 39px;
+    --gutter: 15px;
+}
+
+.container {
+    max-width: var(--content-width);
+    padding-left: var(--mob-padding);
+    padding-right: var(--mob-padding);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint(sm) {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    }
+}
+
