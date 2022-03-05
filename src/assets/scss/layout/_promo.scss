@@ -1,0 +1,117 @@
+.promo {
+    position: relative;
+    margin-bottom: 200px;
+
+    &__cards-wrap {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        transform: translate(0, 71%);
+        padding: 40px 0;
+        margin-right: 39px;
+        max-width: 1240px;
+        border-radius: 20px;
+        background-color: var(--theme-main);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+        z-index: 10;
+
+        @include breakpoint(lg) {
+            position: static;
+            flex-direction: column;
+            box-shadow: none;
+            border: none;
+            margin-right: 0;
+            transform: translate(0, 0);
+        }
+
+        @include breakpoint(sm) { 
+            position: absolute;
+            align-items: flex-start;
+            transform: translate(0, 80%);
+            border-radius: 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+            margin-right: 15px;
+            padding-top: 12px;
+        }
+    }
+
+    &__card {
+        position: relative;
+        padding: 0 80px;
+        border-right: 1px solid #D7D7DD;
+
+        @include breakpoint(lg) {
+            margin-bottom: 16px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
+            padding: 35px 100px 47px 156px;
+        }
+
+        @include breakpoint(sm) { 
+            box-shadow: none; 
+            padding-top: 12px;
+            padding-left: 32px;
+            padding-bottom: 12px;
+            padding-right: 24px;
+            margin-bottom: 0;
+        }
+
+        &:last-child {
+            border: none;
+
+            @include breakpoint(lg) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__card-img {
+        margin-bottom: 24px;
+        max-width: 92px;
+
+        @include breakpoint(lg) {
+            position: absolute;
+            margin-bottom: 0;
+            top: 32px;
+            left: 32px;
+        }
+
+        @include breakpoint(sm) {
+            position: static;
+            max-width: 68px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__card-title {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-family: 'Exo 2';
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 135%;
+        max-width: 228px;
+        color: var(--main-font);
+
+        @include breakpoint(lg) {
+            max-width: none;
+        }
+
+        @include breakpoint(sm) {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+    }
+
+    &__card-desc {
+        margin: 0;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--add-font);
+
+        @include breakpoint(sm) {
+        font-size: 14px;
+        }
+    }
+}
