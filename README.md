@@ -5,9 +5,7 @@ ___
 #### The project uses:
 adaptive design,
 scss architecture 7+1,
-gulp bundle,
-js modules,
-flex-box grid based on mixins
+gulp bundle
 ____
 
 #### To run project:
